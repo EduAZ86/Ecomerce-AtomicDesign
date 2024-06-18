@@ -148,6 +148,7 @@ export type TFontSize =
     | 'text-6xl'
     | 'text-4xl'
     | 'text-2xl'
+    | 'text-xl'
     | 'text-base'
     | 'text-sm'
     | 'text-xs'

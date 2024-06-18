@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { SearchBar } from "../searchBar/SearchBar";
-import { Button } from "@/components/common/Button";
-import { Select } from "@/components/common/Select/Select";
-import { Typography } from "@/components/common/Typography";
+import { Button, Select, Typography } from "@/components/common";
+import ThemeSwitcher from "@/theme/ThemeSwitcher";
+
+
 import { IOptionData } from "@/components/common/Select/types";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { SearchBar } from "../searchBar";
 
 export const NavBar: FC = () => {
     const option1: IOptionData = {
@@ -33,6 +34,7 @@ export const NavBar: FC = () => {
         `}
         >
             <Select
+                key={`all-categorys`}
                 optionStyle={{
                     align: 'items-center',
                     background: "transparent",
@@ -45,8 +47,10 @@ export const NavBar: FC = () => {
                     width: 'w-fit',
                     rounded: 'rounded-l-md'
                 }}
+                name="allCategories"
                 options={options}
                 placeholder="All Category"
+
             />
             <SearchBar />
             <div
@@ -68,7 +72,7 @@ export const NavBar: FC = () => {
                         key='farShopping'
                         Icon={{
                             icon: faCartShopping,
-                            iconWhidth: 'w-7',
+                            iconSize: 'text-xl',
                             position: "leaft"
                         }}
                         styleButton={{
@@ -85,8 +89,22 @@ export const NavBar: FC = () => {
                             
                         `}
                     >
-                        <Typography key="cart" variant="label" textColor="secondary" textSize="text-sm">Cart</Typography>
-                        <Typography key="priceCart" variant="label" textColor="secondary" textSize="text-xs">$ 150.20</Typography>
+                        <Typography
+                            key="cart"
+                            variant="label"
+                            textColor="secondary"
+                            textSize="text-sm"
+                        >
+                            Cart
+                        </Typography>
+                        <Typography
+                            key="priceCart"
+                            variant="label"
+                            textColor="secondary"
+                            textSize="text-xs"
+                        >
+                            $ 150.20
+                        </Typography>
                     </div>
 
                 </div>
@@ -100,7 +118,7 @@ export const NavBar: FC = () => {
                         key='faUser'
                         Icon={{
                             icon: faUser,
-                            iconWhidth: 'w-5',
+                            iconSize: 'text-xl',
                             position: "leaft"
                         }}
                         styleButton={{
@@ -113,15 +131,28 @@ export const NavBar: FC = () => {
                         className={`
                             flex flex-col
                             justify-center
-                            items-start
-                            
+                            items-start                            
                         `}
                     >
-                        <Typography key="cart" variant="label" textColor="secondary">User</Typography>
-                        <Typography key="priceCart" variant="label" textColor="secondary" textSize="text-xs">UserName</Typography>
+                        <Typography
+                            key="cart"
+                            variant="label"
+                            textColor="secondary"
+                        >
+                            User
+                        </Typography>
+                        <Typography
+                            key="priceCart"
+                            variant="label"
+                            textColor="secondary"
+                            textSize="text-xs"
+                        >
+                            UserName
+                        </Typography>
                     </div>
 
                 </div>
+                <ThemeSwitcher />
 
             </div>
         </div>

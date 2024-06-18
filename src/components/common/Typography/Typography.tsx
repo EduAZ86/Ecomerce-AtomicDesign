@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ITypographyProps, TTypographyVariant } from "./types";
-import { AltText, TextError, MainTitle, Paragraph, Title, TextButton, Label, SubTitle, CardTitle } from "./styles.tw";
+import { AltText, TextError, Price, MainTitle, Paragraph, Title, TextButton, Label, SubTitle, CardTitle } from "./styles.tw";
 
 const TypographySchema: TTypographyVariant = {
     mainTitle: (props: ITypographyProps) => (
@@ -31,7 +31,7 @@ const TypographySchema: TTypographyVariant = {
         <Label {...props}>{props.children}</Label>
     ),
     price: (props: ITypographyProps) => (
-        <Label {...props}>{props.children}</Label>
+        <Price {...props}>{props.children}</Price>
     )
 }
 export const Typography: FC<ITypographyProps> = (props: ITypographyProps) => {

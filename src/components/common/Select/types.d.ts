@@ -32,7 +32,7 @@ export interface ISelectProps {
     value?: string;
     placeholder?: string;
     disabled?: boolean;
-    name?: string;
+    name: string;
     optionStyle: IOptionStyle;
     selectStyle: ISelectStyle;
 }

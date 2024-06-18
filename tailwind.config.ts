@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/theme/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
@@ -18,7 +19,7 @@ const config: Config = {
         },
         dark: {
           'primary': '#FE624C',
-          'secundary': '##F4F4F4',
+          'secundary': '#F4F4F4',
           'background': '#FFFFFF',
           'acent': '#646464',
           'complementary': '#303030',
@@ -26,7 +27,7 @@ const config: Config = {
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
-        'montserrat':['Montserrat']
+        'montserrat': ['Montserrat']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

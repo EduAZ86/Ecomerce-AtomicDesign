@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ContentButton: FC<IContentButtonProps> = ({
     children,
-    size,
     disabled,
     onClick,
     type,
@@ -15,8 +14,6 @@ export const ContentButton: FC<IContentButtonProps> = ({
         style,
         width
     },
-    title,
-    loading
 }) => {
 
     return (
@@ -25,8 +22,7 @@ export const ContentButton: FC<IContentButtonProps> = ({
             flex flex-row relative
             ${width ? width : "w-fit"}
             ${background ? `bg-light-${background} dark:bg-dark-${background}` : 'bg-transparent'}
-            ${textColor ? `dark:text-dark-${textColor} text-light-${textColor}` : 'text-light-acent'}
-            ${size}
+            ${textColor && `dark:text-dark-${textColor} text-light-${textColor}`}            
             px-3 py-2
             ${rounded ? rounded : 'rounded'}
             active:scale-95
@@ -44,17 +40,16 @@ export const ContentButton: FC<IContentButtonProps> = ({
     )
 }
 
-export const IconContainer: FC<IIconButtonProps> = ({ icon, iconWhidth, style }) => {
+export const IconContainer: FC<IIconButtonProps> = ({ icon, iconSize, style }) => {
     return (
         <>{
             <span
                 className={`
-                ${iconWhidth}
+                ${iconSize}
                 flex flex-row
                 relative
                 justify-center
-                text-center
-                
+                text-center                                                
             `}
             >
                 <FontAwesomeIcon

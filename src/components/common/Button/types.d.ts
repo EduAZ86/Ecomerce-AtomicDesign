@@ -1,4 +1,4 @@
-import { TColors, TRounded, TWidth } from "@/types/tailwindStyleTypes";
+import { TColors, TFontSize, TRounded, TWidth } from "@/types/tailwindStyleTypes";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { CSSProperties, ReactNode } from "react";
 
@@ -28,7 +28,7 @@ interface IStyleButton {
 interface IIconStyle {
     position: IconPosition;
     icon: IconProp;
-    iconWhidth: TWidth;
+    iconSize: TFontSize;
     style?: CSSProperties;
 }
 

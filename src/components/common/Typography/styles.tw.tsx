@@ -7,10 +7,8 @@ export const MainTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = fa
             className={`
             md:${align} ${bold ? 'font-bold' : 'font-light'}
             text-center
-            ${textSize ? textSize : 'text-3xl md:text-4xl'} 
-            
-            m-0
-                       
+            ${textSize ? textSize : 'text-3xl md:text-4xl'}             
+            m-0                       
             ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}         
             `
             }
@@ -45,8 +43,7 @@ export const SubTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = fal
             className={`
             md:${align} ${bold ? 'font-bold' : 'font-light'}
             ${textSize ? textSize : 'text-xl md:text-2xl'} 
-             m-0 
-             
+             m-0              
             ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}          
             `
             }
@@ -118,7 +115,7 @@ export const TextButton: FC<ITypographyProps> = ({ align = 'text-left', children
         
         ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`} 
         `}
-        style={style}
+            style={style}
         >
             {children}
         </span>
@@ -127,18 +124,33 @@ export const TextButton: FC<ITypographyProps> = ({ align = 'text-left', children
 
 export const Label: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
-        <label
+        <span
             className={`
         md:${align}  
         ${textSize ? textSize : 'text-sm'}
-        
-        ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`} 
-        cursor-pointer
+        ${bold && "font-bold"}
+        ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}         
         `}
-        style={style}
+            style={style}
         >
             {children}
-        </label>
+        </span>
+    );
+};
+export const Price: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
+    return (
+        <span
+            className={`
+        md:${align}  
+        ${textSize ? textSize : 'text-sm'}
+        ${bold && "font-bold"}
+        text-light-${textColor}             
+        tracking-wide
+        `}
+            style={style}
+        >
+            {children}
+        </span>
     );
 };
 export const AltText: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
@@ -147,8 +159,7 @@ export const AltText: FC<ITypographyProps> = ({ align = 'text-left', bold = fals
             className={`
             md:${align} ${bold ? 'font-bold' : 'font-light'}
             text-center
-            ${textSize ? textSize : 'text-3xs'} 
-             
+            ${textSize ? textSize : 'text-3xs'}          
              m-0 
              ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}   
             `}

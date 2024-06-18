@@ -18,7 +18,7 @@ export const Button: FC<IButtonProps> = ({ title, Icon, loading, ...ContentProps
                         <IconContainer
                             key='iconLeft'
                             icon={Icon.icon}
-                            iconWhidth={Icon.iconWhidth}
+                            iconSize={Icon.iconSize}
                         />}
                     {title && <Typography
                         variant="textButton"
@@ -29,7 +29,7 @@ export const Button: FC<IButtonProps> = ({ title, Icon, loading, ...ContentProps
                         <IconContainer
                             key='iconRight'
                             icon={Icon.icon}
-                            iconWhidth={Icon.iconWhidth}
+                            iconSize={Icon.iconSize}
                         />}
                 </>
             }

@@ -8,13 +8,13 @@ export const SearchBar: FC = () => {
         <div
             className={`
                 w-1/2 h-8
-                flex flex-row                
+                flex flex-row                             
             `}
         >
             <input
                 className={`
                     flex-1
-                    bg-light-secondary
+                    bg-light-secondary             
                     border-l-2
                     text-xs                  
                     px-2                 
@@ -34,7 +34,7 @@ export const SearchBar: FC = () => {
                 variant="text"
                 Icon={{
                     icon: faSearch,
-                    iconWhidth: 'w-3',
+                    iconSize: 'text-sm',
                     position: 'leaft'
                 }}
             />

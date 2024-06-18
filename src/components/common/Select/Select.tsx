@@ -15,9 +15,11 @@ export const Select: FC<ISelectProps> = ({
     return (
         <select
             onChange={onChange}
+            title={name}
             value={value}
             disabled={disabled}
-            name={name}
+            name={`name-select-${name}`}
+            id={`id-select-${name}`}
             className={`
             ${height ? height : "h-fit"}
             ${width ? width : "w-fit"}
