@@ -8,6 +8,7 @@ const config: Config = {
     "./src/theme/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    darkMpde:class
     extend: {
       colors: {
         light: {
