@@ -1,4 +1,4 @@
-import { TAlign, TColors, TFontSize, THeight, TRounded, TWidth } from "@/types/tailwindStyleTypes";
+import { TAlign, TColors, TFontSize, THeight, TRounded, TWidth } from "@/components/types/tailwindStyleTypes";
 
 
 export interface IOptionStyle {

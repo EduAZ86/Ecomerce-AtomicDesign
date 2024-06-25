@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Pagination } from "./Pagination"
-import { ICardData } from "@/types/cardProduct.data"
+import { ICardData } from "@/components/types/cardProduct.data"
 import { CardMapper } from "../cards"
 
 export const Products: FC = () => {

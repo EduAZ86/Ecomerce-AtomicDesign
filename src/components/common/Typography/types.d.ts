@@ -1,14 +1,11 @@
-import { TColors, TFontSize } from '@/types/tailwindStyleTypes';
+import { TColors, TFontSize } from '@/components/types/tailwindStyleTypes';
 import { CSSProperties, FC, PropsWithChildren } from 'react';
-
 
 export interface ITypographyProps extends PropsWithChildren {
     variant: keyof TTypographyVariant;
-    style?: CSSProperties;
-    bold?: boolean;
+    style?: CSSProperties;   
     align?: 'text-center' | 'text-left' | 'text-right';
-    textSize?: TFontSize;
-    textColor?: TColors;
+
 };
 
 export type TTypographyVariant = {

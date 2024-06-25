@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { IOptionData, ISelectProps } from "./types";
 import { OptionSelect } from "./Option";
+import { twMerge } from "tailwind-merge";
+import { backgroundColorAsign } from "@/theme/themeColors";
 
 export const Select: FC<ISelectProps> = ({
     options,
@@ -20,15 +22,15 @@ export const Select: FC<ISelectProps> = ({
             disabled={disabled}
             name={`name-select-${name}`}
             id={`id-select-${name}`}
-            className={`
-            ${height ? height : "h-fit"}
-            ${width ? width : "w-fit"}
-            bg-light-${background}
-            ${rounded ? rounded : "rounded-none"}
-            pl-3 pr-1 py-2
-            text-xs  
-            font-bold         
-        `}
+            className={twMerge(
+                width ? width : "w-fit",
+                height ? height : "h-fit  ",
+                "pl-3 pr-1 py-2 text-xs font-bold",
+                rounded ? rounded : "rounded-none",
+                background && backgroundColorAsign(background)
+            )
+
+            }
             style={style}
         >
             {placeholder && <option value="" >{placeholder}</option>}

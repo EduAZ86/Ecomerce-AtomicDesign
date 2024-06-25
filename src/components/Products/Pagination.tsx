@@ -11,11 +11,11 @@ export const Pagination: FC = () => {
             className={
                 `
                 w-full h-10
-                bg-light-secondary dark:bg-dark-secundary
+                bg-light-background dark:bg-dark-secundary
                 flex flex-row
                 items-center
-                justify-between
-                px-10
+                justify-around
+                
                 `}
         >
             <Typography
@@ -55,7 +55,7 @@ export const Pagination: FC = () => {
                     ]}
                     selectStyle={
                         {
-                            background: 'acent',
+                            background: 'secondary',
                             rounded: "rounded-lg"
                         }
                     }
@@ -80,7 +80,7 @@ export const Pagination: FC = () => {
                     ]}
                     selectStyle={
                         {
-                            background: 'acent',
+                            background: 'secondary',
                             rounded: "rounded-lg"
                         }
                     }
@@ -122,8 +122,6 @@ export const Pagination: FC = () => {
                 />
 
             </div>
-
-
         </div>
     )
 }

@@ -34,6 +34,6 @@ const TypographySchema: TTypographyVariant = {
         <Price {...props}>{props.children}</Price>
     )
 }
-export const Typography: FC<ITypographyProps> = (props: ITypographyProps) => {
-    return TypographySchema[props?.variant](props);
-};
+// export const Typography: FC<ITypographyProps> = (props: ITypographyProps) => {
+//     return TypographySchema[props?.variant](props);
+// };

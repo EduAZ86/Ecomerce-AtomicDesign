@@ -1,17 +1,19 @@
+import { twMerge } from "tailwind-merge";
 import { ITypographyProps } from "./types";
 import { FC } from 'react'
+import { textColorAsign } from "@/theme/themeColors";
 
 export const MainTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <h1
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'}
-            text-center
-            ${textSize ? textSize : 'text-3xl md:text-4xl'}             
-            m-0                       
-            ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}         
-            `
-            }
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : "text-3xl md:text-4xl",
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -22,14 +24,14 @@ export const MainTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = fa
 export const Title: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <h2
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'}
-            text-center
-            ${textSize ? textSize : 'text-2xl md:text-3xl'}           
-            
-            ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}           
-            `
-            }
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-2xl md:text-3xl',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -40,13 +42,14 @@ export const Title: FC<ITypographyProps> = ({ align = 'text-left', bold = false,
 export const SubTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <h2
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'}
-            ${textSize ? textSize : 'text-xl md:text-2xl'} 
-             m-0              
-            ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}          
-            `
-            }
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-xl md:text-2xl',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -57,13 +60,14 @@ export const SubTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = fal
 export const CardTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <h3
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'} 
-            ${textSize ? textSize : 'text-xl'} 
-            
-            m-0
-            ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`} 
-            `}
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-xl md:text-2xl',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -75,14 +79,14 @@ export const CardTitle: FC<ITypographyProps> = ({ align = 'text-left', bold = fa
 export const Paragraph: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textSize, textColor, style }) => {
     return (
         <p
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'} 
-            ${textSize ? textSize : 'text-sm'}
-            
-             m-0
-             ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}   
-             `
-            }
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-sm',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -93,12 +97,14 @@ export const Paragraph: FC<ITypographyProps> = ({ align = 'text-left', bold = fa
 export const TextError: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <span
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'} 
-            ${textSize ? textSize : 'text-sm'} 
-             m-0
-            ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`} 
-            `}
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-sm',
+                    textColor ? textColorAsign(textColor) : "text-red-700 dark:text-red-400"
+                )}
             style={style}
         >
             {children}
@@ -106,15 +112,18 @@ export const TextError: FC<ITypographyProps> = ({ align = 'text-left', bold = fa
     );
 };
 
-export const TextButton: FC<ITypographyProps> = ({ align = 'text-left', children, textColor, textSize, style }) => {
+export const TextButton: FC<ITypographyProps> = ({ align = 'text-left', children, textColor, textSize, style, bold }) => {
     return (
         <span
-            className={`
-        md:${align} font-bold 
-        ${textSize ? textSize : 'text-sm'}
-        
-        ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`} 
-        `}
+            className={
+                twMerge(
+                    "text-center m-0",
+                    "group-hover:text-light-secondary group-hover:dark:text-dark-secondary",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-sm',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -125,12 +134,14 @@ export const TextButton: FC<ITypographyProps> = ({ align = 'text-left', children
 export const Label: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <span
-            className={`
-        md:${align}  
-        ${textSize ? textSize : 'text-sm'}
-        ${bold && "font-bold"}
-        ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}         
-        `}
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-sm',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -140,13 +151,14 @@ export const Label: FC<ITypographyProps> = ({ align = 'text-left', bold = false,
 export const Price: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <span
-            className={`
-        md:${align}  
-        ${textSize ? textSize : 'text-sm'}
-        ${bold && "font-bold"}
-        text-light-${textColor}             
-        tracking-wide
-        `}
+            className={
+                twMerge(
+                    "text-center m-0 tracking-wide",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-sm',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}
@@ -156,13 +168,14 @@ export const Price: FC<ITypographyProps> = ({ align = 'text-left', bold = false,
 export const AltText: FC<ITypographyProps> = ({ align = 'text-left', bold = false, children, textColor, textSize, style }) => {
     return (
         <span
-            className={`
-            md:${align} ${bold ? 'font-bold' : 'font-light'}
-            text-center
-            ${textSize ? textSize : 'text-3xs'}          
-             m-0 
-             ${textColor && `text-light-${textColor} dark:text-dark-${textColor}`}   
-            `}
+            className={
+                twMerge(
+                    "text-center m-0",
+                    align,
+                    bold ? 'font-bold' : 'font-light',
+                    textSize ? textSize : 'text-xs',
+                    textColor && textColorAsign(textColor)
+                )}
             style={style}
         >
             {children}

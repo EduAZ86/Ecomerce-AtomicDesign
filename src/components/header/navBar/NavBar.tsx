@@ -1,11 +1,13 @@
-import { FC } from "react";
+'use client'
+import { FC, useState } from "react";
 import { Button, Select, Typography } from "@/components/common";
 import ThemeSwitcher from "@/theme/ThemeSwitcher";
 
 
 import { IOptionData } from "@/components/common/Select/types";
-import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { SearchBar } from "../searchBar";
+import { UserButton } from "./UserButton/UserButton";
 
 export const NavBar: FC = () => {
     const option1: IOptionData = {
@@ -16,18 +18,28 @@ export const NavBar: FC = () => {
         label: "graphicsCard",
         value: "gpu"
     }
-
+    const [onFocus, setOnFocus] = useState<boolean>(false)
     const options = [option1, option2]
 
     const handleChange = () => {
 
+    }
+    const handlerFocus = () => {
+        setOnFocus(true)
+        console.log("focus");
+
+    }
+    const handlerBlur = () => {
+        setOnFocus(false)
+        console.log("blur")
     }
 
     return (
         <div
             className={`
             w-full h-24
-            flex flex-row
+            flex 
+            md:flex-row flex-col-reverse 
             relative
             bg-light-primary
             items-center justify-center
@@ -42,7 +54,7 @@ export const NavBar: FC = () => {
                     textSize: "text-xs"
                 }}
                 selectStyle={{
-                    background: 'background',
+                    background: 'secondary',
                     height: 'h-8',
                     width: 'w-fit',
                     rounded: 'rounded-l-md'
@@ -56,17 +68,17 @@ export const NavBar: FC = () => {
             <div
                 className={`                  
                     flex flex-row relative
+                    w-full
                     ml-8
-                    justify-center
+                    md:justify-center justify-between
                     gap-6
-
                 `}
             >
                 <div className={`
                     flex flex-row
                     gap-1
-                    items-center
-                    justify-start
+                    md:items-center
+                    md:justify-start 
                 `}>
                     <Button
                         key='farShopping'
@@ -85,8 +97,7 @@ export const NavBar: FC = () => {
                         className={`
                             flex flex-col
                             justify-center
-                            items-start
-                            
+                            items-start                            
                         `}
                     >
                         <Typography
@@ -108,50 +119,7 @@ export const NavBar: FC = () => {
                     </div>
 
                 </div>
-                <div className={`
-                    flex flex-row
-                    gap-1
-                    items-center
-                    justify-start
-                `}>
-                    <Button
-                        key='faUser'
-                        Icon={{
-                            icon: faUser,
-                            iconSize: 'text-xl',
-                            position: "leaft"
-                        }}
-                        styleButton={{
-                            background: 'transparent',
-                            textColor: 'secondary'
-
-                        }}
-                    />
-                    <div
-                        className={`
-                            flex flex-col
-                            justify-center
-                            items-start                            
-                        `}
-                    >
-                        <Typography
-                            key="cart"
-                            variant="label"
-                            textColor="secondary"
-                        >
-                            User
-                        </Typography>
-                        <Typography
-                            key="priceCart"
-                            variant="label"
-                            textColor="secondary"
-                            textSize="text-xs"
-                        >
-                            UserName
-                        </Typography>
-                    </div>
-
-                </div>
+                <UserButton />
                 <ThemeSwitcher />
 
             </div>

@@ -1,4 +1,4 @@
-import { Button } from "@/components/common/Button";
+import { Button } from "@/components/Button";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { FC } from "react";
@@ -29,9 +29,8 @@ export const SearchBar: FC = () => {
                 styleButton={{
                     background: "acent",
                     textColor: "secondary",
-                    rounded: "rounded-r-md"
-                }}
-                variant="text"
+                    rounded: "rounded-r-md",                   
+                }}               
                 Icon={{
                     icon: faSearch,
                     iconSize: 'text-sm',

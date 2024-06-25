@@ -29,11 +29,12 @@ const ThemeSwitcher: React.FC = () => {
     return (
         <button
             onClick={() => handleTheme()}
-            className={`flex flex-row w-8
-        justify-center items-center
-        duration-500
-        text-xl
-        
+            className={`
+            flex flex-row 
+            md:w-8 w-4
+            justify-center items-center
+            duration-500
+            text-xl        
         `}>
             {emogi && <FontAwesomeIcon icon={emogi} />}
         </button>

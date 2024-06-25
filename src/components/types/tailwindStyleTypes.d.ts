@@ -125,6 +125,19 @@ export type TBorder =
     | 'border-solid'
     | 'border-none';
 
+export type TBorderWidth =
+    | 'border-2'
+    | 'border-4'
+    | 'border-8'
+    | 'border-0';
+
+export type TBorderColor =
+    | 'border-primary'
+    | 'border-secondary'
+    | 'border-background'
+    | 'border-acent'
+    | 'border-complementary';
+
 export type TCursor =
     | 'cursor-auto'
     | 'cursor-pointer'
@@ -151,8 +164,38 @@ export type TFontSize =
     | 'text-xl'
     | 'text-base'
     | 'text-sm'
-    | 'text-xs'
-    ;
+    | 'text-xs';
+
+export type TFontWeight =
+    | 'font-extralight'
+    | 'font-light'
+    | 'font-normal'
+    | 'font-semibold'
+    | 'font-extrabold';
+
+export type TTextAlign =
+    | 'text-left'
+    | 'text-center'
+    | 'text-right'
+    | 'text-justify';
+
+export type TLetterSpacing =
+    | 'tracking-tighter'
+    | 'tracking-normal'
+    | 'tracking-wide'
+    | 'tracking-widest';
+
+export type TTextVerticalAlign =
+    | 'align-top'
+    | 'align-middle'
+    | 'align-bottom';
+
+
+export type TTextDecoration =
+    | 'underline'
+    | 'overline'
+    | 'line-through'
+    | 'no-underline';
 
 export type TOpacity =
     | 'opacity-0'
@@ -202,3 +245,63 @@ type Rounded =
 type PrefixR<T extends string> = `rounded-${T}`;
 
 export type TRounded = PrefixR<Rounded>;
+
+export type TBlur =
+    | "blur-none"
+    | "blur-sm"
+    | "blur"
+    | "blur-md"
+    | "blur-xl"
+    | "blur-2xl"
+    | "blur-3xl";
+
+export type TBrightness =
+    | "brightness-0"
+    | "brightness-50"
+    | "brightness-75r"
+    | "brightness-100"
+    | "brightness-150"
+    | "brightness-200";
+
+export type TContrast =
+    | "contrast-0"
+    | "contrast-50"
+    | "contrast-75"
+    | "contrast-100"
+    | "contrast-150";
+
+export type TDropDown =
+    | "drop-shadow-sm"
+    | "drop-shadow"
+    | "drop-shadow-md"
+    | "drop-shadow-lg"
+    | "drop-shadow-xl"
+    | "drop-shadow-2xl";
+
+
+export type TBackdropBlur =
+    | "backdrop-blur-none"
+    | "backdrop-blur-sm"
+    | "backdrop-blur"
+    | "backdrop-blur-md"
+    | "backdrop-blur-lg"
+    | "backdrop-blur-xl"
+    | "backdrop-blur-2xl"
+    | "backdrop-blur-3xl";
+
+export type TObjectFit =
+    | "object-contain"
+    | "object-cover"
+    | "object-fill"
+    | "object-none"
+    | "object-scale-down";
+
+export type TBackgroundGradient =
+    | "bg-gradient-to-t"
+    | "bg-gradient-to-tr"
+    | "bg-gradient-to-r"
+    | "bg-gradient-to-br"
+    | "bg-gradient-to-b"
+    | "bg-gradient-to-bl"
+    | "bg-gradient-to-l"
+    | "bg-gradient-to-tl";
