@@ -2,15 +2,15 @@ import { TColors, TFontSize, TFontWeight, TLetterSpacing, TTextAlign, TTextDecor
 import { PropsWithChildren } from "react";
 
 export type TypographyVariant = {
-    h1: FC<TTypography>;
-    h2: FC<TTypography>;
-    h3: FC<TTypography>;
-    h4: FC<TTypography>;
-    h5: FC<TTypography>;
-    h6: FC<TTypography>;
-    label: FC<TTypography>;
-    body: FC<TTypography>;
-    legend: FC<TTypography>;
+    h1: FC<ITypographyProps>;
+    h2: FC<ITypographyProps>;
+    h3: FC<ITypographyProps>;
+    h4: FC<ITypographyProps>;
+    h5: FC<ITypographyProps>;
+    h6: FC<ITypographyProps>;
+    label: FC<ITypographyProps>;
+    body: FC<ITypographyProps>;
+    legend: FC<ITypographyProps>;
 };
 
 export interface ITypographyStyles {
