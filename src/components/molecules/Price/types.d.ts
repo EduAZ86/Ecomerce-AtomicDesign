@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type PriceVariant = {
     cardPrice: FC<IPriceVariantProps>;
     DetailProductPrice: FC<IPriceVariantProps>;
@@ -12,4 +14,8 @@ export interface IPriceProps {
     variant: keyof PriceVariant;
     price: number;
     discount: number;
+}
+
+export interface IPriceContainerProps {
+    children: ReactNode;
 }

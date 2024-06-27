@@ -1,52 +1,108 @@
 import { FC } from "react";
 import { IPriceProps, IPriceVariantProps, PriceVariant } from "./types";
 import { Typography } from "@/components/atoms";
+import { PriceContainer } from "./PriceContainer";
 
 const priceSchema: PriceVariant = {
     cardPrice: (props: IPriceVariantProps) => {
-        <Typography>
-
-        </Typography>
+        <PriceContainer>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
+            </Typography>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
+            </Typography>
+        </PriceContainer>
     },
     cartPrice: (props: IPriceVariantProps) => {
-        <div>
-            <Typography>
+        <PriceContainer>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
                 {props.price}
             </Typography>
-            <Typography>
-
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
             </Typography>
-        </div>
+        </PriceContainer>
     },
     cartTotalPrice: (props: IPriceVariantProps) => {
-        <div>
-            <Typography>
+        <PriceContainer>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
                 {props.price}
             </Typography>
-            <Typography>
-
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
             </Typography>
-        </div>
+        </PriceContainer>
     },
     DetailProductPrice: (props: IPriceVariantProps) => {
-        <div>
-            <Typography>
+        <PriceContainer>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
                 {props.price}
             </Typography>
-            <Typography>
-
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
             </Typography>
-        </div>
+        </PriceContainer>
     },
     offerPrice: (props: IPriceVariantProps) => {
-        <div>
-            <Typography>
+        <PriceContainer>
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
                 {props.price}
             </Typography>
-            <Typography>
-
+            <Typography
+                variant="h5"
+                styles={{
+                    textColor: "primary"
+                }}
+            >
+                {props.price}
             </Typography>
-        </div>
+        </PriceContainer>
     }
 }
 
