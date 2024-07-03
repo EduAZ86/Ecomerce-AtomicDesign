@@ -35,9 +35,10 @@ export interface IOptionProps extends React.OptionHTMLAttributes<HTMLOptionEleme
     direction: TDirection;
 }
 
-export interface IBasicSelectProps extends IStyledSelectProps {
+interface IOptionStyle extends Pick<IOptionProps, "background" | "backgroundHover" | "direction"> { }
+export interface IBasicSelectProps extends Omit<IStyledSelectProps, "children"> {
     options: IOption[];
-    optionStyle: IOptionProps;
+    optionStyle: IOptionStyle;
     placeholder: string;
     placeholderStyle: ITypographyStyles;
 };

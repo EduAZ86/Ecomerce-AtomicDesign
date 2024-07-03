@@ -28,13 +28,11 @@ export const BasicSelect: FC<IBasicSelectProps> = ({
             {options.map((option, index) => {
                 return (
                     <Option
-                        value={option.value}
-                        disabled={option.disabled}
+                        option={option}
                         key={index}
                         {...optionStyle}
-                    >
-                        {option.content}
-                    </Option>
+                    />
+
                 )
             })}
         </SelectStyled>

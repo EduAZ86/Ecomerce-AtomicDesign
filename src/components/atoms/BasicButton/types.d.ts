@@ -1,4 +1,4 @@
-import { TColors, TDirection, TDisplay, THeight, TRounded, TWidth } from "@/components/types/tailwindStyleTypes";
+import { TColors, TDirection, TDisplay, THeight, TRounded, TScale, TWidth } from "@/components/types/tailwindStyleTypes";
 import React, { CSSProperties, ReactNode } from "react";
 
 interface IStyleButton {
@@ -13,6 +13,10 @@ interface IStyleButton {
     mobileDirection?: TDirection;
 }
 
+interface IActiveStyle extends IStyleButton {
+    activePress: TScale;
+}
+
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children" | "style"> { }
 
 export interface IButtonStyledProps {
@@ -20,7 +24,7 @@ export interface IButtonStyledProps {
     children: ReactNode;
     styles: IStyleButton;
     hoverStyle?: IStyleButton;
-    activeStyle?: IStyleButton;
+    activeStyle?: IActiveStyle;
 }
 
 export interface IBasicButtonProps extends IButtonStyledProps {

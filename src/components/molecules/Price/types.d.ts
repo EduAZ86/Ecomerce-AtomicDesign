@@ -8,7 +8,10 @@ export type PriceVariant = {
     offerPrice: FC<IPriceVariantProps>;
 };
 
-export interface IPriceVariantProps extends Omit<IPriceProps, "variant"> { };
+export interface IPriceVariantProps {
+    regularPrice: string;
+    priceWithDiscount: string;
+};
 
 export interface IPriceProps {
     variant: keyof PriceVariant;

@@ -1,7 +1,6 @@
-import { FC } from "react"
-import { IBasicContainerProps } from "./types"
-import { twMerge } from "tailwind-merge"
-import { backgroundColorAsign } from "@/theme/themeColors"
+import { FC } from "react";
+import { twMerge } from "tailwind-merge";
+import { IBasicContainerProps } from "./types";
 
 export const BasicContainer: FC<IBasicContainerProps> = ({
     children,

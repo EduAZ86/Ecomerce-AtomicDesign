@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { IPriceProps, IPriceVariantProps, PriceVariant } from "./types";
 import { Typography } from "@/components/atoms";
 import { PriceContainer } from "./PriceContainer";
+import { priceFormatter } from "./priceFormatter";
+import { IPriceProps, IPriceVariantProps, PriceVariant } from "./types";
 
 const priceSchema: PriceVariant = {
     cardPrice: (props: IPriceVariantProps) => {
@@ -9,18 +10,20 @@ const priceSchema: PriceVariant = {
             <Typography
                 variant="h5"
                 styles={{
-                    textColor: "primary"
+                    textColor: "secondary",
+                    textDecoration: "line-through"
                 }}
             >
-                {props.price}
+                {props.regularPrice}
             </Typography>
             <Typography
-                variant="h5"
+                variant="h6"
                 styles={{
-                    textColor: "primary"
+                    textColor: "primary",
+
                 }}
             >
-                {props.price}
+                {props.priceWithDiscount}
             </Typography>
         </PriceContainer>
     },
@@ -32,7 +35,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.regularPrice}
             </Typography>
             <Typography
                 variant="h5"
@@ -40,7 +43,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.priceWithDiscount}
             </Typography>
         </PriceContainer>
     },
@@ -52,7 +55,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.regularPrice}
             </Typography>
             <Typography
                 variant="h5"
@@ -60,7 +63,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.priceWithDiscount}
             </Typography>
         </PriceContainer>
     },
@@ -72,7 +75,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.regularPrice}
             </Typography>
             <Typography
                 variant="h5"
@@ -80,7 +83,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.priceWithDiscount}
             </Typography>
         </PriceContainer>
     },
@@ -92,7 +95,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.regularPrice}
             </Typography>
             <Typography
                 variant="h5"
@@ -100,7 +103,7 @@ const priceSchema: PriceVariant = {
                     textColor: "primary"
                 }}
             >
-                {props.price}
+                {props.priceWithDiscount}
             </Typography>
         </PriceContainer>
     }
@@ -110,5 +113,7 @@ export const Price: FC<IPriceProps> = ({
     variant,
     ...otherPriceProps
 }) => {
-    return priceSchema[variant](otherPriceProps)
+    const regularPrice = priceFormatter(otherPriceProps.price);
+    const priceWithDiscount = priceFormatter(otherPriceProps.price - otherPriceProps.price * otherPriceProps.discount);
+    return priceSchema[variant]({ regularPrice, priceWithDiscount })
 }

@@ -1,5 +1,6 @@
 import { IGradientProps } from "@/components/atoms/Gradient/types";
 import { IImageComponentProps } from "@/components/atoms/ImageComponent/types";
+import { TColors, TOpacity } from "@/components/types/tailwindStyleTypes";
 
 type backgroundType = "backgroundImage" | "backgroundColor" | "backgroundGradient";
 

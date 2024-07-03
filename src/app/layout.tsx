@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Providers from "@/theme/ThemeProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const montserrat = Montserrat({ subsets: ["latin"] })
 
@@ -15,12 +16,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const queryClient = new QueryClient()
+
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Providers>
-          {children}
-        </Providers>
+        <QueryClientProvider client={queryClient}>
+          <Providers>
+            {children}
+          </Providers>
+        </QueryClientProvider>
       </body>
     </html>
   );

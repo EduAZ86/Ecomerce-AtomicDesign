@@ -22,8 +22,8 @@ export const CardContainer: FC<ICardContainerProps> = ({
         >
             <Background
                 backgroundColor={{
-                    backgroundColor: { backgroundColor },
-                    hoverBackgroundColor: { hoverBackgroundColor }
+                    backgroundColor: backgroundColor,
+                    hoverBackgroundColor: hoverBackgroundColor
                 }}
             />
             <Link

@@ -7,7 +7,7 @@ export const Option: FC<IOptionProps> = ({
     option,
     background,
     backgroundHover,
-    direction
+    direction,
 }) => {
     return (
         <option
@@ -18,7 +18,7 @@ export const Option: FC<IOptionProps> = ({
                 backgroundHover && backgroundColorAsign(backgroundHover, "hover:")
             )}
         >
-            {option}
+            {option.content}
         </option>
     )
 }
